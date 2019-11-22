@@ -20,16 +20,18 @@ Next, run `install_monitor.sh` with superuser rights:
 sudo ./install_monitor.sh
 ```
 
-... and then run `launch_monitor.sh` with superuser rights:
+To bring up a monitor-mode interface (`mon0`), run `launch_monitor.sh` with superuser rights:
 
 ```
 sudo ./launch_monitor.sh
 ```
 
-... which should bring up a `mon0` interface for you use (you can check this via e.g. `ifconfig`).
+The presence of the `mon0` interface can be checked via e.g. `ifconfig`).
 
 The `mon0` interface can be used via e.g. [`tshark`](https://www.wireshark.org/docs/man-pages/tshark.html):
 
 ```
 sudo tshark -i mon0 -I
 ```
+
+Note that the `launch_monitor.sh` script must be run again after reboots etc.
