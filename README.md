@@ -26,7 +26,7 @@ To bring up a monitor-mode interface (`mon0`), run `launch_monitor.sh` with supe
 sudo ./launch_monitor.sh
 ```
 
-The presence of the `mon0` interface can be checked via e.g. `ifconfig`), and can be used via e.g. [`tshark`](https://www.wireshark.org/docs/man-pages/tshark.html):
+The presence of the `mon0` interface can be checked via e.g. `ifconfig`, and can be used via e.g. [`tshark`](https://www.wireshark.org/docs/man-pages/tshark.html):
 
 ```
 sudo tshark -i mon0 -I
