@@ -7,7 +7,6 @@
 #	https://github.com/seemoo-lab/nexmon/issues/344
 #
 
-do_upgrade="yes" # Note: will reboot the system after upgrading software!
 do_clone="yes"
 do_libraries="yes"
 do_flashpatches="yes"
@@ -19,31 +18,6 @@ if (( $EUID != 0 ))
 then
 	echo "This script needs to be run as root, or using sudo!"
 	exit
-fi
-
-# Update the platform, and ensure some core software is present
-if [[ "${do_upgrade}" == "yes" ]]
-then
-	apt update
-
-	apt install \
-		raspberrypi-kernel-headers \
-		git \
-		libgmp3-dev \
-		gawk \
-		qpdf \
-		bison \
-		flex \
-		make \
-		libtool-bin \
-		automake \
-		texinfo
-
-	apt dist-upgrade
-
-	apt autoremove
-
-	reboot
 fi
 
 # Get the new driver source code from Github, and disable reporting of statistics
