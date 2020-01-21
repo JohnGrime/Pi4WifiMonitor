@@ -1,4 +1,4 @@
-# Pi4Monitor
+# Pi4WifiMonitor
 
 Scripts to install and initialise monitor mode on the Raspberry Pi v4's internal WiFi chipset. Uses code and information provided by the [Nexmon](https://github.com/seemoo-lab/nexmon) project, and tested under [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) Buster.
 
@@ -44,3 +44,18 @@ The example code requires the `pcap` library and can be built as follows:
 g++ -std=c++14 -Wall -Wextra -pedantic wifi_snoop.cpp -lpcap -lpthread
 ```
 
+The code can then be run as root, specifying the interface to monitor and an optional `pcap`-style filter string, e.g.:
+
+```
+sudo ./a.out mon0
+```
+
+```
+sudo ./a.out mon0 "type mgt subtype beacon"
+```
+
+```
+sudo ./a.out mon0 "type mgt subtype assoc-req or type data subtype NULL"
+```
+
+... etc.
