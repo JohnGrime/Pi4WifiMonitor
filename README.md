@@ -2,6 +2,8 @@
 
 Scripts to install and initialise monitor mode on the Raspberry Pi v4's internal WiFi chipset. Uses code and information provided by the [Nexmon](https://github.com/seemoo-lab/nexmon) project, and tested under [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) Buster.
 
+## Installation and Setup
+
 First ensure your Pi has up-to-date versions of the required software, and reboot:
 
 ```
@@ -33,3 +35,12 @@ sudo tshark -i mon0 -I
 ```
 
 Note that the `launch_monitor.sh` script must be run again after reboots etc.
+
+## Example `pcap` code
+
+The example code requires the `pcap` library and can be built as follows:
+
+```
+g++ -std=c++14 -Wall -Wextra -pedantic wifi_snoop.cpp -lpcap -lpthread
+```
+
