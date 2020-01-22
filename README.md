@@ -1,6 +1,6 @@
 # Pi4WifiMonitor
 
-Scripts to install and initialise monitor mode on the Raspberry Pi v4's internal WiFi chipset. Uses code and information provided by the [Nexmon](https://github.com/seemoo-lab/nexmon) project, and tested under [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) Buster.
+Scripts to install and initialise monitor mode on the [Raspberry Pi](https://www.raspberrypi.org/) v4's internal WiFi chipset. Uses code and information provided by the [Nexmon](https://github.com/seemoo-lab/nexmon) project, and tested under [Raspbian](https://www.raspberrypi.org/downloads/raspbian/) Buster.
 
 ## Installation and Setup
 
