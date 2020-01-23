@@ -162,7 +162,12 @@ int main(int argc, char *argv[])
 		struct sigaction new_action;
 
 		new_action.sa_handler = signal_handler;
-		sigemptyset(&new_action.sa_mask);
+		
+		if (sigemptyset(&new_action.sa_mask) != 0) {
+			perror("sigemptyset: ");
+			exit(-1);
+		}
+		
 		new_action.sa_flags = 0;
 
 		if (sigaction(SIGINT, &new_action, nullptr) != 0) {
